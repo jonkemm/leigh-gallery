@@ -1,0 +1,293 @@
+/* -------- your mum -------- */
+
+a{
+    color: #333;
+	text-decoration: none;
+	width: 100%	;
+}
+a.link{
+	border-bottom:1px solid #999;
+}
+body{
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+	font-size: 1.4em;
+}
+h2{
+	font-size: 1.1em;
+}
+h1,h2{
+	margin: 0.5em 0;
+}
+h1,h2,strong{
+	font-weight: normal;
+}
+header{
+	font-size:2.5em;
+	padding:20px 20px 20px 0;
+	display: flex;
+	text-align: center;
+}
+main{
+	min-height:350px;
+	width:86%;
+}
+/* main, header, .container{
+	outline: 1px solid #333;
+} */
+ul,li{
+    margin: 0;
+    padding: 0;
+	list-style: none;
+}
+fieldset{
+	border: none;
+	padding: 0;
+}
+legend{
+	display: none;
+}
+label{
+	margin-right: 1em;
+	vertical-align: top;
+	width: 2rem;
+	display: inline-block;
+	font-size: 0.7em;
+}
+input, textarea, select{
+	border:1px solid hsla(206,78%,80%, 100%);
+	border-radius: 0.5em;
+	padding: 0.5em;
+}
+
+/* ------- nav ---------- */
+
+nav{
+    width: 6em;
+	margin-right: 2em;
+}
+nav ul, footer ul{
+    width: 100%;
+	background-color:hsla(206,78,98, 100%);
+	border:1px solid #DDD;
+}
+nav  ul, footer ul, .btn, .day{
+	background-color:hsla(206,78,98, 100%);
+	border:1px solid #DDD;
+}
+nav  ul li:hover, footer ul li:hover, .btn:hover, .day:hover{
+	background-color:hsla(206,78%,90%, 100%);
+}
+nav li a, footer li a{
+	padding:7px;
+	display:block;
+}
+nav li{
+	text-align:left; 
+	width:100%;
+}
+nav ul,img{
+	border-radius: 0.2em;
+}
+
+/* ------- admin menu ---------- */
+
+ul#users {
+	display: flex;
+	font-size: 80%;
+}
+ul#users li a{
+	padding: 0.5em;
+}
+
+/* ------- classes ---------- */
+
+.artist-detail img{
+	margin-right: 1em;
+	float: left;
+}
+#search{
+	float: right;
+	width: 200px;
+}
+#sitename{
+	width: 500px;
+	margin-left: 8em
+}
+.icon-over{
+	vertical-align: top;
+	width: 1.5em;
+	height: 1.5em;
+}
+
+p.red{
+	background-color: hsl(1,100%, 94%);
+	display: inline;
+	padding: 0.3em 1em;
+	border-radius: 0.5em;
+	line-height: 2em;
+	text-transform: capitalize;
+}
+
+.btn{
+	border-radius: 0.5em;
+	padding: 0.5em;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+}
+.buy{
+	padding: 2em;
+}
+.container{
+    min-width: 15em;
+	max-width: 60em;
+    margin: 0 auto;
+	padding: 0 0.5em;
+}
+.details{
+	margin-left: 1em;
+	width: 100px;
+}
+.half{
+	width: 43%;
+	margin-right: 2%;
+}
+.home .contact{
+    text-align: center;
+    width: 100%;
+}
+.home .left, .home .right{
+    width: 100px;
+    padding: 0 2em;
+}
+.home .front, .home .bg{
+	display: flex;
+	margin: 0 auto;
+}
+.front{
+	width: 600px;
+}
+.home .bg{
+    text-align: center;
+	display: inline;
+}
+.link-cont{
+	margin-top: 1em;
+}
+pre{
+	font-size:1.2em;
+	line-height:1;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.product{
+	padding: 1em;
+}
+.product:hover{
+	background-color:hsla(206,78%,95%, 100%);}
+.row{
+    display: flex;
+}
+
+
+
+.page-jump{
+	margin:1em 0;
+}
+.page-jump .btn{
+	width: auto;
+	padding: 0.5em;
+}
+.page-jump .day{
+	display: inline-block;
+	width: auto;
+	height: 1em;
+	margin: 0 0.25em;
+	padding: 0.5em;
+	border-radius: 0.25em;
+}
+.page-jump .today{
+	background-color:hsl(100,100%,70%);
+
+}
+.page-jump .info{
+	margin-top: 1em;
+}
+table td{
+	height: 2em;
+}
+table td{
+	margin: 0;
+}
+tr:nth-child(even) {
+	background-color: hsl(0,0%,95%);
+}
+table .btn{
+	padding: 0.3em;
+}
+
+
+
+/* ---------- footer ------------------------*/
+
+#copy{
+	padding:0.5% 0 0 1%;
+}
+footer li {
+	width:23%;
+	text-align:center;
+}
+footer li a{
+	display:block;
+	padding:2% 1% 2% 1%;
+	width:98%;
+}
+footer ul {
+	font-size: 80%;
+	margin:1em 0 1em 0;
+    display: flex;
+    width: 100%;
+}
+
+/*  ----------@media -------- */
+
+@media only screen and (max-width: 600px) {
+	.details{
+		width: auto;
+	}
+	nav, main {
+		width: 100%;
+	}
+	nav ul{
+		display: flex;
+		font-size: 0.9em;
+	}
+	.home .left, .right{
+		display: flex;
+	}
+	.home .front{
+		width:min-content;
+	}
+	.home .front img{
+		margin: 1em;
+		float: left;
+	}
+	.product .row{
+		display: flex;
+	}
+	.row,.home .front{
+		display: block;
+	}
+	.scroll{
+		width: 100%;
+		overflow-x: scroll;
+	}
+	.half{
+		width: 100%;
+	}
+	#sitename{
+		margin-left: 0
+	}
+}
