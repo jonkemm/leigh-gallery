@@ -1,7 +1,6 @@
 <?php
 define('APPLICATION', true);
 include 'includes/conn/conngrunt_front.php';
-// ini_set('display_errors', 1);
 
 
 $sqlProd = "SELECT pic_product_no, pic_name, product_name, artist_name, artist_surname, pic_id
@@ -79,7 +78,7 @@ include('includes/php/footer.php');
 	</div>
 	<script type='application/ld+json'> 
 {
-  "@context": "http://www.schema.org",
+  "@context": "https://www.schema.org",
   "@type": "ArtGallery",
   "name": "Leigh Gallery",
   "url": "leighgallery.co.uk",

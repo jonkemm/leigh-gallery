@@ -18,7 +18,7 @@ $productRow = $sthProd->fetch(PDO::FETCH_ASSOC);
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Leigh Gallery | Art Gallery in Hastings, East Sussex</title>
+	<title><?= $strName ?> at Leigh Gallery | Art Gallery in Hastings, East Sussex</title>
     <link href="../../../includes/css/jk-02.css" rel="stylesheet" type="text/css" />
 	<meta name="keywords" content="<?=$strName?>, leigh gallery, art gallery hastings, hastings art gallery, Ceramics, Glass, Paintings" />
 	<meta name="description" content="Art from <?= $strName?> - Local artists in the Hastings area" />
@@ -29,7 +29,7 @@ $productRow = $sthProd->fetch(PDO::FETCH_ASSOC);
 include('../../../includes/php/top.php');
 ?>	
 			<div>
-				<h1><?= $strName ?></h1>
+				<h1><?= $strName ?> at Leigh Gallery</h1>
 <?php
 	$i=0;
 	while ( $productRow = $sthProd->fetch(PDO::FETCH_ASSOC))

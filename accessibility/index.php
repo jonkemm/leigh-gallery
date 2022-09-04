@@ -17,7 +17,7 @@ include('../includes/php/top.php');
 				<div class="accessibilty">
 					<h1>Accessibility</h1>
 					<p>We have strived to make this website available to all regardless of individual disability/ability.</p>
-					<p>However if, as a person with disability, you encounter difficulties, please don't hesitate to&nbsp;<a href="http://www.ryecollege.co.uk/contact">contact us</a>&nbsp;and make us aware of the issue. We will endeavour to improve the website to reflect your needs.</p>
+					<p>However if, as a person with disability, you encounter difficulties, please don't hesitate to <a href="/contact">contact us</a>&nbsp;and make us aware of the issue. We will endeavour to improve the website to reflect your needs.</p>
 					<h2>Navigation &amp; Navigation Aids</h2>
 					<ul>
 						<li>Primary site navigation is located (site-wide) in the page header area at the top of each page.</li>
