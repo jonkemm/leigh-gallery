@@ -18,7 +18,7 @@ else
 		FROM artist_new
 		WHERE artist_id = $intId";	
 	
-	echo $sqlProd;
+	// echo $sqlProd;
 
 	$sthProd = $pdo->query($sqlProd);
 	$productRow = $sthProd->fetch();
@@ -80,10 +80,10 @@ include '../../includes/php/users.php';
 							{
 
 ?>
-							<option value="<?=$sqlDocRow['artist_id']?>" 
-								<? if ( intval( $productRow['product_artist_no']) == intval( $sqlDocRow['artist_id'] ) ) {echo ' selected=selected'; } ?>
-								<?=$sqlDocRow['artist_surname']?>, <?=$sqlDocRow['artist_name']?>
-							</option>
+							<option 
+								value="<?=$sqlDocRow['artist_id']?>" 
+								<?php if ( intval( $productRow['product_artist_no']) == intval( $sqlDocRow['artist_id'] ) ) {echo ' selected=selected'; } ?>
+							><?=$sqlDocRow['artist_surname']?>, <?=$sqlDocRow['artist_name']?></option>
 <?php 
 							}
 ?>
@@ -102,7 +102,15 @@ include '../../includes/php/users.php';
 							while ( $sqlDocRow = $sthDoc->fetch())
 							{
 ?>
-							<option value="<?=$sqlDocRow['type_id']?><?php if ( intval( $productRow['product_type_no']) == intval( $sqlDocRow['type_id'] ) ) {echo ' selected=selected'; } ?>"><?= $sqlDocRow['type_name']?></option>
+							<option 
+								value="<?=$sqlDocRow['type_id']?>" 
+								<?php 
+									if ( intval( $productRow['product_type_no']) == intval( $sqlDocRow['type_id'] ) ) {
+										echo ' selected=selected'; 
+									} ?>
+							>
+								<?= $sqlDocRow['type_name']?>
+							</option>
 <?php 
 							}
 ?>
@@ -118,9 +126,25 @@ include '../../includes/php/users.php';
 		</div>
 		<div class="half">
 			<h2>Product Images</h2>
+<?php
+	
+	$sqlCount = "SELECT COUNT(pic_id) AS countVar 
+	FROM pic
+	WHERE pic_star = 1";	
+
+	$sthCount = $pdo->query($sqlCount);
+	$countRow = $sthCount->fetch();
+
+	$intCount = $countRow['countVar'];
+	$message = $intCount . " / 4 homepage images added";
+?>
 			<p>Click on an image to delete it</p>
+			<p><?= $message ?></p>
 			<div class="grid">
 <?php
+
+
+
 			$sqlDoc = "SELECT pic_name, pic_id, pic_star FROM pic WHERE pic_product_no = $intId";
 			$sthDoc = $pdo->query($sqlDoc);
 			while ( $sqlDocRow = $sthDoc->fetch())
@@ -132,11 +156,12 @@ include '../../includes/php/users.php';
 				<div class="admin-cont">
 					<img alt="" src="../../img/products/<?= $intId ?>/thumb_<?= $sqlDocRow['pic_name']?>" class="admin-img" />
 
-					<a onClick="return confirm('are you sure you want to delete <?=$sqlDocRow['pic_name']?>?')" href="../delete/?mode=pic&amp;id=<?= $intId ?>&amp;id2=<?=$sqlDocRow['pic_id']?>">
-						<img src="../../trash.svg" alt="" class="icon-over" />
+					<a title="Delete image" onClick="return confirm('are you sure you want to delete <?=$sqlDocRow['pic_name']?>?')" href="../delete/?mode=pic&amp;id=<?= $intId ?>&amp;id2=<?=$sqlDocRow['pic_id']?>">
+						<img src="../../img/template/trash.svg" class="icon-over" alt="" />
 					</a>
-
-					<a 
+				
+					<a
+						 
 					   onClick="return confirm('are you sure you want to add <?=$sqlDocRow['pic_name']?> to the home page?')" #
 					   href="../change/?mode=pic&amp;id=<?= $intId ?>&amp;id2=<?=$sqlDocRow['pic_id']?>&amp;star=<?=$intStar?>"
 					>

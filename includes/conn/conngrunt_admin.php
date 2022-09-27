@@ -9,7 +9,9 @@ if ($override = '')
 		exit;
 	}
 }
-include '../ini.php';
+	$gruntUser = 'leighga_dba';
+	$gruntPass= 'ZuluZebra25!';
+
 	$pdo = new PDO('mysql:host=213.171.200.74;dbname=leighga_penfold;charset=utf8', $gruntUser, $gruntPass);
 
 	

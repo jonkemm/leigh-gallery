@@ -6,7 +6,7 @@ include '../../includes/conn/conngrunt_front.php';
 	
 $sqlProd = "SELECT DISTINCT artist_id,
 				(
-					SELECT COUNT(product_id) 
+					SELECT COUNT(product_id) AS countVar
 					FROM artist_new 
 					INNER JOIN product ON product_artist_no = artist_id
 				) AS countVar,

@@ -25,6 +25,7 @@ if (  $strMode == "product" ) // -----------------------------------------------
 		$sthUpdate = $pdo->query($sql);
 		
 		$missing = $strName.' updated';
+		$_SESSION['missing'] = $missing;
 		header ('Location: ../edit/?id='.$intId.'&mode=product&missing='.$missing );
 	}
 }
@@ -40,6 +41,7 @@ elseif ($strMode == 'pic')
 		$sthUpdate = $pdo->query($sql);
 		
 		$missing = ' image updated';
+		$_SESSION['missing'] = $missing;
 		header ('Location: ../edit/?id='.$intId.'&mode=product&missing='.$missing );
 }
 elseif (  $strMode == "artist" ) // ---------------------------------------------------------------------------------------------
@@ -60,6 +62,7 @@ elseif (  $strMode == "artist" ) // --------------------------------------------
 		$sthUpdate = $pdo->query($sql);
 		
 		$missing = $strName.' updated';
+		$_SESSION['missing'] = $missing;
 		header ('Location: ../edit/?id='.$intId.'&mode=artist&missing='.$missing );
 	}
 }
@@ -83,8 +86,9 @@ elseif ($strMode == 'star')
 	
 	
 	
-		
 		$missing = ' star updated';
+		
+		$_SESSION['missing'] = $missing;
 		header ('Location: ../?&missing='.$missing );
 }
 ?>

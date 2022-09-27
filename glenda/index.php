@@ -126,7 +126,7 @@ include '../includes/php/users.php';
 ?>
 										<li>
 											<img 
-												src="/img/products/<?=$sqlDocRow['pic_product_no']?>/thumb_<?=$sqlDocRow['pic_name']?>" alt=""/>
+												src="../img/products/<?=$sqlDocRow['pic_product_no']?>/thumb_<?=$sqlDocRow['pic_name']?>" alt=""/>
 											<input type="hidden" value="<?=$sqlDocRow['pic_id']?>" name="star[]" /<
 										</li>
 <?php 

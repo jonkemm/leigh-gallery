@@ -21,6 +21,7 @@ if ( $strMode == 'product' )
 	}
 	rmdir($dirname);
 	$missing='Product deleted: '.$strName;
+	$_SESSION['missing'] = $missing;
 	$sql = "DELETE FROM product WHERE product_id = $intId";
 	$sthDoc = $pdo->query($sql);
 	$sql = "DELETE FROM pic WHERE pic_product_no = $intId";
@@ -39,6 +40,7 @@ elseif ( $strMode == 'pic' )
 		unlink('../../img/products/'.$intId.'/front_'.$strName);
 	}
 	$missing='Image deleted: '.$strName;
+	$_SESSION['missing'] = $missing;
 	$sql = "DELETE FROM pic WHERE pic_id = $intId2";
 	$sthDoc = $pdo->query($sql);
 	header('Location: ../edit/?mode=product&id='.$intId.'&missing='.$missing);
@@ -74,6 +76,7 @@ elseif ( $strMode == 'artist' )
 	$sql = "DELETE FROM artist_new WHERE artist_id = $intId";
 	$sthDoc = $pdo->query($sql);
 	$missing='Artist deleted: '.$strName;
+	$_SESSION['missing'] = $missing;
 	header('Location: ../view/?mode=artist&id='.$intId.'&missing='.$missing);
 	exit;
 }

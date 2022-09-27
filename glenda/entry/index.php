@@ -16,11 +16,11 @@ include '../../includes/php/top.php';
 			<h1>Login</h1>
 			<form name="form1" method="post" action="../login/">
 				<p>
-					<label for="name">Username</label>
+					<label for="name">User</label>
 					<input name="username" type="text" />
 				</p>
 				<p>
-					<label for="tel">Password</label>
+					<label for="tel">Pass</label>
 					<input name="password" type="password" />
 				</p>
 				<p>
